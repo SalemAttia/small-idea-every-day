@@ -24,6 +24,7 @@ jobs:
           paths:
             - node_modules
       # prepare the database
+      - run: cp .env.testing .env
       - run: touch storage/testing.sqlite
 
       - run: php artisan code:analyse
