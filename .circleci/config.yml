@@ -19,10 +19,12 @@ jobs:
           keys:
             - node-v1-{{ checksum "package.json" }}
             - node-v1-
-      - run: yarn install
       - save_cache:
           key: node-v1-{{ checksum "package.json" }}
           paths:
             - node_modules
+      # prepare the database
+      - run: touch storage/testing.sqlite
+
       - run: php artisan code:analyse
       - run: vendor/bin/phpunit --coverage-clover clover.xml
