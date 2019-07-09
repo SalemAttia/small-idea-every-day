@@ -23,6 +23,7 @@ jobs:
           key: node-v1-{{ checksum "package.json" }}
           paths:
             - node_modules
+  test:
       # prepare the database
       - run: cp .env.testing .env
       - run: touch storage/testing.sqlite
