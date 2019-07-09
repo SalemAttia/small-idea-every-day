@@ -57,7 +57,7 @@
         ],
         "stan" : "@php artisan code:analyse",
         "test" : "vendor\\bin\\phpunit",
-        "cs-fixer" : "php-cs-fixer fix resources --config=.phpcs --verbose --allow-risky=yes",
+        "cs-fixer" : "php-cs-fixer fix . --config=.phpcs --verbose --allow-risky=yes",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
