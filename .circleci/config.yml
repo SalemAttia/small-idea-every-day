@@ -24,5 +24,5 @@ jobs:
           key: node-v1-{{ checksum "package.json" }}
           paths:
             - node_modules
-      - run: vendor/bin/phpstan analyze --memory-limit=-1 --no-progress --level=max src
+      - run: php artisan code:analyse
       - run: vendor/bin/phpunit --coverage-clover clover.xml
