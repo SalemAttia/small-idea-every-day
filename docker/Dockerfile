@@ -45,6 +45,10 @@ COPY --chown=www:www . /var/www
 # Change current user to www
 USER www
 
+# configure db
+RUN docker-compose exec app php artisan key:generate
+RUN docker-compose exec app php artisan config:cache
+
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
