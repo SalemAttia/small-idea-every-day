@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $i = 016;
+    echo $i / 2;
+
 });
